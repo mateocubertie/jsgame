@@ -138,3 +138,14 @@ section #buttons #buttonLeft {
 section #buttons #buttonRight {
     grid-area: 2 / 3;
 }
+section #nigger {
+    position: absolute;
+    width: auto;
+    left: 0px;
+    bottom: 0px;
+    background-color: white;
+    display: none;
+}
+section #nigger h1 {
+    color: black;
+}

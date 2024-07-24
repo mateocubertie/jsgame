@@ -18,7 +18,11 @@ for (let columna = 1; columna <= 9; columna++) {
     }
 }
 let coordenadasCasilla = [5, 5]
-
+let coordenadasNigger = [2, 3]
+let casillaNigger = setCasilla(coordenadasNigger)
+casillaNigger.style.backgroundColor = 'green'
+let displayNigger = document.querySelector(`#nigger`)
+console.log(displayNigger)
 function setCasilla(coordenadas) {
     return document.querySelector(`#grid-${coordenadas[0]}-${coordenadas[1]}`)
 }
@@ -87,15 +91,25 @@ let buttonDown = document.querySelector('#buttonDown')
 let buttonLeft = document.querySelector('#buttonLeft')
 let buttonRight = document.querySelector('#buttonRight')
 
+function checkNigga(coordenadasCasilla, coordenadasNigger) {
+    if (coordenadasCasilla[0] == coordenadasNigger[0] && coordenadasCasilla[1] == coordenadasNigger[1]){
+        displayNigger.style.display = 'block'
+        console.log('xd')
+    }
+}
 buttonUp.addEventListener("mousedown", () => {
     casillaNegro = mover('arriba', casillaNegro)
+    checkNigga(coordenadasCasilla, coordenadasNigger)
 })
 buttonDown.addEventListener("mousedown", () => {
     casillaNegro = mover('abajo', casillaNegro)
+    checkNigga(coordenadasCasilla, coordenadasNigger)
 })
 buttonLeft.addEventListener("mousedown", () => {
     casillaNegro = mover('izquierda', casillaNegro)
+    checkNigga(coordenadasCasilla, coordenadasNigger)
 })
 buttonRight.addEventListener("mousedown", () => {
     casillaNegro = mover('derecha', casillaNegro)
+    checkNigga(coordenadasCasilla, coordenadasNigger)
 })
