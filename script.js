@@ -91,7 +91,7 @@ let buttonDown = document.querySelector('#buttonDown')
 let buttonLeft = document.querySelector('#buttonLeft')
 let buttonRight = document.querySelector('#buttonRight')
 
-function checkNigga(coordenadasCasilla, coordenadasCoin) {
+function checkCoin(coordenadasCasilla, coordenadasCoin) {
     if (coordenadasCasilla[0] == coordenadasCoin[0] && coordenadasCasilla[1] == coordenadasCoin[1]){
         displayCoin.style.display = 'block'
         console.log('xd')
@@ -99,17 +99,17 @@ function checkNigga(coordenadasCasilla, coordenadasCoin) {
 }
 buttonUp.addEventListener("mousedown", () => {
     casillaNegro = mover('arriba', casillaNegro)
-    checkNigga(coordenadasCasilla, coordenadasCoin)
+    checkCoin(coordenadasCasilla, coordenadasCoin)
 })
 buttonDown.addEventListener("mousedown", () => {
     casillaNegro = mover('abajo', casillaNegro)
-    checkNigga(coordenadasCasilla, coordenadasCoin)
+    checkCoin(coordenadasCasilla, coordenadasCoin)
 })
 buttonLeft.addEventListener("mousedown", () => {
     casillaNegro = mover('izquierda', casillaNegro)
-    checkNigga(coordenadasCasilla, coordenadasCoin)
+    checkCoin(coordenadasCasilla, coordenadasCoin)
 })
 buttonRight.addEventListener("mousedown", () => {
     casillaNegro = mover('derecha', casillaNegro)
-    checkNigga(coordenadasCasilla, coordenadasCoin)
+    checkCoin(coordenadasCasilla, coordenadasCoin)
 })
