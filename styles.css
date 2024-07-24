@@ -138,14 +138,16 @@ section #buttons #buttonLeft {
 section #buttons #buttonRight {
     grid-area: 2 / 3;
 }
-section #nigger {
+section #Coin {
     position: absolute;
     width: auto;
-    left: 0px;
-    bottom: 0px;
+    padding: 40px;
+    left: 50px;
+    bottom: 50px;
     background-color: white;
     display: none;
 }
-section #nigger h1 {
+section #Coin h1 {
     color: black;
+    font-weight: 400;
 }

@@ -18,11 +18,11 @@ for (let columna = 1; columna <= 9; columna++) {
     }
 }
 let coordenadasCasilla = [5, 5]
-let coordenadasNigger = [2, 3]
-let casillaNigger = setCasilla(coordenadasNigger)
-casillaNigger.style.backgroundColor = 'green'
-let displayNigger = document.querySelector(`#nigger`)
-console.log(displayNigger)
+let coordenadasCoin = [2, 3]
+let casillaCoin = setCasilla(coordenadasCoin)
+casillaCoin.style.backgroundColor = 'green'
+let displayCoin = document.querySelector(`#Coin`)
+console.log(displayCoin)
 function setCasilla(coordenadas) {
     return document.querySelector(`#grid-${coordenadas[0]}-${coordenadas[1]}`)
 }
@@ -91,25 +91,25 @@ let buttonDown = document.querySelector('#buttonDown')
 let buttonLeft = document.querySelector('#buttonLeft')
 let buttonRight = document.querySelector('#buttonRight')
 
-function checkNigga(coordenadasCasilla, coordenadasNigger) {
-    if (coordenadasCasilla[0] == coordenadasNigger[0] && coordenadasCasilla[1] == coordenadasNigger[1]){
-        displayNigger.style.display = 'block'
+function checkNigga(coordenadasCasilla, coordenadasCoin) {
+    if (coordenadasCasilla[0] == coordenadasCoin[0] && coordenadasCasilla[1] == coordenadasCoin[1]){
+        displayCoin.style.display = 'block'
         console.log('xd')
     }
 }
 buttonUp.addEventListener("mousedown", () => {
     casillaNegro = mover('arriba', casillaNegro)
-    checkNigga(coordenadasCasilla, coordenadasNigger)
+    checkNigga(coordenadasCasilla, coordenadasCoin)
 })
 buttonDown.addEventListener("mousedown", () => {
     casillaNegro = mover('abajo', casillaNegro)
-    checkNigga(coordenadasCasilla, coordenadasNigger)
+    checkNigga(coordenadasCasilla, coordenadasCoin)
 })
 buttonLeft.addEventListener("mousedown", () => {
     casillaNegro = mover('izquierda', casillaNegro)
-    checkNigga(coordenadasCasilla, coordenadasNigger)
+    checkNigga(coordenadasCasilla, coordenadasCoin)
 })
 buttonRight.addEventListener("mousedown", () => {
     casillaNegro = mover('derecha', casillaNegro)
-    checkNigga(coordenadasCasilla, coordenadasNigger)
+    checkNigga(coordenadasCasilla, coordenadasCoin)
 })
