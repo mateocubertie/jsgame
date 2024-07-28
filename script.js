@@ -5,14 +5,18 @@ console.dir(body)
 let section = document.querySelector('.login')
 let grid = document.querySelector('#display')
 console.log(grid)
-for (let columna = 1; columna <= 9; columna++) {
-    for (let fila = 1; fila <= 9; fila++) {
+let columnasGrid = 100
+let filasGrid = 50
+let anchoCasilla = "10px"
+let altoCasilla = "10px"
+for (let columna = 1; columna <= columnasGrid; columna++) {
+    for (let fila = 1; fila <= filasGrid; fila++) {
         let casilla = document.createElement('div')
         casilla.style.gridColumn = `${columna}`
         casilla.style.gridRow = `${fila}`
         casilla.style.backgroundColor = "white"
-        casilla.style.width = "40px"
-        casilla.style.height = "40px"
+        casilla.style.width = anchoCasilla
+        casilla.style.height = altoCasilla
         casilla.id = `grid-${fila}-${columna}`
         grid.append(casilla);
     }
@@ -67,7 +71,7 @@ function mover(direccion, casillaNegro) {
             }
             break
         case 'abajo':
-            if (coordenadasCasilla[0] < 9) {
+            if (coordenadasCasilla[0] < filasGrid) {
                 coordenadasCasilla[0] += 1
             }
             break
@@ -77,7 +81,7 @@ function mover(direccion, casillaNegro) {
             }
             break
         case 'derecha':
-            if (coordenadasCasilla[1] < 9) {
+            if (coordenadasCasilla[1] < columnasGrid) {
                 coordenadasCasilla[1] += 1
             }
             break
@@ -112,4 +116,28 @@ buttonLeft.addEventListener("mousedown", () => {
 buttonRight.addEventListener("mousedown", () => {
     casillaNegro = mover('derecha', casillaNegro)
     checkCoin(coordenadasCasilla, coordenadasCoin)
+})
+
+let playbutton = document.querySelector('#keyboardButton')
+playbutton.addEventListener("keydown", (key) => {
+    console.log(key.code)
+    key.preventDefault()
+    switch (key.code) {
+        case 'ArrowUp':
+            casillaNegro = mover('arriba', casillaNegro)
+            checkCoin(coordenadasCasilla, coordenadasCoin)
+            break
+        case 'ArrowDown':
+            casillaNegro = mover('abajo', casillaNegro)
+            checkCoin(coordenadasCasilla, coordenadasCoin)
+            break
+        case 'ArrowLeft':
+            casillaNegro = mover('izquierda', casillaNegro)
+            checkCoin(coordenadasCasilla, coordenadasCoin)
+            break
+        case 'ArrowRight':
+            casillaNegro = mover('derecha', casillaNegro)
+            checkCoin(coordenadasCasilla, coordenadasCoin)
+            break
+    }
 })
